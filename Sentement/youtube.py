@@ -2,6 +2,7 @@ from googleapiclient.discovery import build
 import json
 import pandas as pd
 import re
+from youtube_transcript_api import YouTubeTranscriptApi
 
 class Youtube:
 
@@ -181,6 +182,26 @@ class Youtube:
         """
         comments = df["Comment"].tolist()
         return comments
+    
+    def get_transcripts(video_id):
+        """
+        Retrieve transcripts for a given YouTube video.
+
+        Parameters:
+        - video_id (str): The unique identifier of the YouTube video for which transcripts are to be retrieved.
+
+        Returns:
+        - list of str: A list containing the text of each transcript segment for the specified video.
+        If no transcripts are available, an empty list is returned.
+
+        Raises:
+        - TranscriptsUnavailable: If transcripts are not available for the specified video.
+        """
+        transcripts = YouTubeTranscriptApi.get_transcript(video_id)
+        df = pd.DataFrame(transcripts)
+        return df["text"].tolist()
+
+
 
 
 
