@@ -1,0 +1,19 @@
+{
+  "name": "devkraft_neural_knights_2",
+  "version": "0.1.0",
+  "description": "for hackethon",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/decodingafterlife/Neural-Knights-2.0.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/decodingafterlife/Neural-Knights-2.0/issues"
+  },
+  "homepage": "https://github.com/decodingafterlife/Neural-Knights-2.0#readme"
+}
