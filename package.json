@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/decodingafterlife/Neural-Knights-2.0/issues"
   },
-  "homepage": "https://github.com/decodingafterlife/Neural-Knights-2.0#readme"
+  "homepage": "https://github.com/decodingafterlife/Neural-Knights-2.0#readme",
+  "dependencies": {
+    "nodemon": "^3.0.3",
+    "python-shell": "^5.0.0"
+  }
 }
