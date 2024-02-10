@@ -6,3 +6,4 @@ matplotlib
 google-api-python-client
 transformers
 wordcloud
+instaloader
