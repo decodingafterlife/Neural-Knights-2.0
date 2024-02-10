@@ -8,3 +8,4 @@ transformers
 wordcloud
 instaloader
 emoji
+better_profanity
