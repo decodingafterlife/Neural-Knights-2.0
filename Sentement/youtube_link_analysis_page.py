@@ -9,11 +9,9 @@ def download_results1():
     # For example, you can print a message
     print("Downloading results for first model...")
 
-def video():
+def video(video_link):
 
-    st.title("Video Analysis")
-
-    video_link = st.text_input("Enter video link:")
+    st.title("Youtube Analysis")
 
     if video_link:
         # Providing the API key
@@ -31,9 +29,8 @@ def video():
         # Getting max number of comments from the user
         max_results = st.number_input("Enter maximum number of comments", value=100, min_value = 1, max_value = 200)
 
-        button = st.button("Analyze")
 
-        if button:
+        if st.button("Analyze"):
 
             data = video_analysis.get_data(video_id, max_results)
 
@@ -77,7 +74,7 @@ def video():
                 merged_df2 = pd.concat([data, df2], axis=1)
 
                 st.write("Sentiment Analysis Results:")
-                # ssst.dataframe(merged_df, hide_index=True)
+                st.dataframe(merged_df1, hide_index=True)
 
                 # Plotting the wordcloud for the particular category
                 analysis.positive_wordcloud(merged_df1)
