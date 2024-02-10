@@ -2,15 +2,12 @@ from youtube import Youtube as yt
 import streamlit as st
 import pandas as pd
 from transformers import pipeline
-import matplotlib.pyplot as plt
-from googleapiclient.discovery import build
 import analysis
-from wordcloud import WordCloud, STOPWORDS
-# import warnings
 
-# # Suppress Streamlit warnings
-# st.set_option('deprecation.showfileUploaderEncoding', False)
-# st.set_option('deprecation.showPyplotGlobalUse', False)
+def download_results1():
+    # Your function call or code to execute when the button is clicked
+    # For example, you can print a message
+    print("Downloading results for first model...")
 
 def video():
 
@@ -40,77 +37,72 @@ def video():
 
             data = video_analysis.get_data(video_id, max_results)
 
-            # if data == None:
-            #     st.write("HTTP Error!!! Access Denied")
-            #     return
-
             video_details = video_analysis.get_video_details(youtube_api_service, video_id)
 
             if video_details:
                 title = video_details['title']
-                description = video_details['description']
-
                 st.write("Title: " + title)
-                # st.write(f"Description: {description}")
 
             st.dataframe(data, hide_index=True)
 
-
-            # Getting comments
             comments = video_analysis.get_comments(data)
             
-            # Set up the inference pipeline using a model from the Hub
-            sentiment_analysis = pipeline("text-classification", model="j-hartmann/emotion-english-distilroberta-base")
+            # Set up the inference pipeline using the first model
+            sentiment_analysis1 = pipeline("text-classification", model="j-hartmann/emotion-english-distilroberta-base")
+            # Set up the inference pipeline using the second model
+            sentiment_analysis2 = pipeline("sentiment-analysis", model="finiteautomata/bertweet-base-sentiment-analysis")
 
-            predictions = None
+            predictions1 = None
+            predictions2 = None
+
             # Making predictions
             if comments:
-                predictions = sentiment_analysis(comments)
+                predictions1 = sentiment_analysis1(comments)
+                predictions2 = sentiment_analysis2(comments)
             else:
-                st.write("No commets found")
-
-
-            # Visualize the sentiments
-
-            df2 = pd.DataFrame(predictions)
+                st.write("No comments found")
 
             # Visualize the sentiments
-            df = analysis.pie_chart(df2)
-            # Merge the DataFrames column-wise
-            merged_df = pd.concat([data, df2], axis=1)
-            
-            st.write(" ")
-            st.write(" ")  
-            # Plotting the wordcloud for the particular category
-            st.write(" ")
-            st.write(" ")   
-            analysis.positive_wordcloud(merged_df)
-            st.write(" ")
-            st.write(" ")   
-            analysis.negative_wordcloud(merged_df)
-            st.write(" ")
-            st.write(" ")   
-            analysis.neutral_wordcloud(merged_df)
-            st.write(" ")
-            st.write(" ")   
-            st.dataframe(merged_df, hide_index=True)
+            if predictions1 and predictions2:
+                df1 = pd.DataFrame(predictions1)
+                df2 = pd.DataFrame(predictions2)
 
-            # Download the data
-            @st.cache_data
-            def convert_df(df):
-                return df.to_csv().encode('utf-8')
-
-            csv = convert_df(merged_df)
-
-            st.download_button(
-                label="Download data as CSV",
-                data=csv,
-                file_name='large_df.csv',
-                mime='text/csv',
-            )
-
-            
+                # Visualize the sentiments
+                df1_chart = analysis.pie_chart(df1)
+                df2_chart = analysis.pie_chart(df2)
 
 
+                # Merge the DataFrames column-wise
+                merged_df1 = pd.concat([data, df2], axis= 1)
+                merged_df2 = pd.concat([data, df2], axis=1)
 
+                st.write("Sentiment Analysis Results:")
+                # ssst.dataframe(merged_df, hide_index=True)
 
+                # Plotting the wordcloud for the particular category
+                analysis.positive_wordcloud(merged_df1)
+                analysis.negative_wordcloud(merged_df1)
+                analysis.neutral_wordcloud(merged_df1)
+
+                # Download the data
+                @st.cache_data
+                def convert_df(df):
+                    return df.to_csv().encode('utf-8')
+
+                csv1 = convert_df(merged_df1)
+                csv2 = convert_df(merged_df2)
+
+                download_button_1 = st.download_button(
+                    label="Download Results for first Model",
+                    data=csv1,
+                    file_name='sentiment_analysis_results1.csv',
+                    mime='text/csv',
+                    on_click=download_results1  # Assigning the function to on_click parameter
+                )
+
+                download_button_2 = st.download_button(
+                    label="Download Results for second Model",
+                    data=csv2,
+                    file_name='sentiment_analysis_results.csv',
+                    mime='text/csv',
+                )
