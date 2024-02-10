@@ -31,7 +31,7 @@ def video(video_link):
 
         button = st.button("Analyze")
 
-        if button:
+        if True:
 
             data = video_analysis.get_data(video_id, max_results)
 
@@ -75,7 +75,7 @@ def video(video_link):
                 merged_df2 = pd.concat([data, df2], axis=1)
 
                 st.write("Sentiment Analysis Results:")
-                # ssst.dataframe(merged_df, hide_index=True)
+                st.dataframe(merged_df1, hide_index=True)
 
                 # Plotting the wordcloud for the particular category
                 analysis.positive_wordcloud(merged_df1)

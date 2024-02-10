@@ -3,11 +3,12 @@ from googleapiclient.discovery import build
 import pandas as pd
 import re
 from urllib.parse import urlparse
+import streamlit as st
 
-def extract_instagram_comments(post_url, limit=100):
+def extract_instagram_comments(post_url, limit=5):
     # Create an instance of Instaloader
     loader = instaloader.Instaloader()
-    loader.login(user="tps_1514", passwd="Tanmay@2004*")
+    loader.login(user="id_diot", passwd="Tanmay@2004*")
 
     try:
         # Load the post by its URL
@@ -22,6 +23,8 @@ def extract_instagram_comments(post_url, limit=100):
         
         # Iterate over comments and store them in lists
         for comment in post.get_comments():
+            if len(comment.text):
+                continue
             comments_list.append(comment.text)
             usernames_list.append(comment.owner.username)  # Accessing the username through owner
             
@@ -38,4 +41,4 @@ def extract_instagram_comments(post_url, limit=100):
         return df
         
     except Exception as e:
-        print("Error:", e)
+        st.write("Error:", e)
