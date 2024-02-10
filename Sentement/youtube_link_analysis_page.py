@@ -12,11 +12,9 @@ from wordcloud import WordCloud, STOPWORDS
 # st.set_option('deprecation.showfileUploaderEncoding', False)
 # st.set_option('deprecation.showPyplotGlobalUse', False)
 
-def video():
+def video(video_link):
 
-    st.title("Video Analysis")
-
-    video_link = st.text_input("Enter video link:")
+    st.title("Youtube Analysis")
 
     if video_link:
         # Providing the API key
