@@ -29,9 +29,8 @@ def video(video_link):
         # Getting max number of comments from the user
         max_results = st.number_input("Enter maximum number of comments", value=100, min_value = 1, max_value = 200)
 
-        button = st.button("Analyze")
 
-        if True:
+        if st.button("Analyze"):
 
             data = video_analysis.get_data(video_id, max_results)
 

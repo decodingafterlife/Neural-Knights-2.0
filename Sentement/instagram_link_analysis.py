@@ -13,7 +13,7 @@ def post(post_link):
 
     button = st.button("Analyze")
 
-    if True:
+    if button:
 
         data = instagram.extract_instagram_comments(post_link, max_length)
 
