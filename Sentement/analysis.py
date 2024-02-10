@@ -18,10 +18,32 @@ def pie_chart(df):
     Returns:
     None
     """
-    sentiment_counts = df.groupby(['label']).size()
-    fig, ax = plt.subplots(figsize=(6, 6), dpi=100)
-    sentiment_counts.plot.pie(ax=ax, autopct='%1.1f%%', startangle=270, fontsize=12)
+    sentiment_counts = df['label'].value_counts()
+    total = len(df)  # Total number of samples
+    
+    colors = plt.cm.tab10.colors  # Use predefined color map for distinct colors
+    
+    # Create the pie chart
+    fig, ax = plt.subplots(figsize=(8, 8), dpi=100)
+    patches, _, _ = ax.pie(sentiment_counts, labels=sentiment_counts.index, startangle=90, colors=colors, autopct='%1.1f%%')
+    ax.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle
+    ax.legend(loc='best', bbox_to_anchor=(0.5, 0.5))
+
     st.pyplot(fig)
+
+    # Create the table
+    table_data = {'Index': range(1, len(sentiment_counts)+1), 'Sentiment': sentiment_counts.index, 'Count': sentiment_counts.values}
+    color_mapping = {sentiment: color for sentiment, color in zip(sentiment_counts.index, colors)}
+    table_df = pd.DataFrame(table_data)
+    table_df['Percentage'] = (table_df['Count'] / total) * 100  # Calculate percentages
+    
+
+    st.sidebar.table(table_df.set_index('Index'))
+
+
+    
+
+
 
 def positive_wordcloud(merged_df):
     """
