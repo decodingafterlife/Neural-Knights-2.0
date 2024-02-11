@@ -8,8 +8,3 @@ transformers
 wordcloud
 instaloader
 emoji
-<<<<<<< Updated upstream
-better_profanity
-=======
-youtube_transcript_api
->>>>>>> Stashed changes

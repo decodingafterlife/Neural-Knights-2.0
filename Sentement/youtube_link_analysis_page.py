@@ -15,7 +15,7 @@ def video(video_link):
 
     if video_link:
         # Providing the API key
-        api_key = "AIzaSyCFEieCDS70gjiOWy8f90JaNqu5Ithn5Qo"
+        api_key = "youtube-api-key"
 
         # Initializing object of youtube class
         video_analysis = yt(api_key)
