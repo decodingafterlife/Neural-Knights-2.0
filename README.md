@@ -1,10 +1,10 @@
-###Sentiment Hub
+### Sentiment Hub
 
 Sentiment Hub is a sentiment analysis tool designed to analyze emotions expressed in text comments on YouTube and Instagram. With the ability to detect six different emotions, it provides valuable insights into audience reactions and sentiment trends across these platforms.
 
 This project aims to provide an easy-to-use interface for sentiment analysis, allowing users to gain deeper understanding and actionable insights from social media interactions.
 
-#Key features:
+# Key features:
 - Analyze sentiment across YouTube and Instagram comments.
 - Detect six different emotions: happiness, sadness, anger, fear, surprise, and disgust.
 - Easy-to-use Chrome  Extension that automatically detects that you are on a social media site and analyses Post and comments 
@@ -14,7 +14,7 @@ This project aims to provide an easy-to-use interface for sentiment analysis, al
 
 Ready to get started? Follow the installation steps below to set up Sentiment Hub and start analysing sentiment today!
 
-#Technologies used 
+# Technologies used 
 - Python
 - Matplotlib
 - Hugging Face
@@ -24,7 +24,7 @@ Ready to get started? Follow the installation steps below to set up Sentiment Hu
 - Streamlit
 
 
-#Description
+# Description
 The Sentiment Hub project is an emotion detection tool mainly focusing on Social Media platforms ( Youtube and Instagram ) using Sentiment Analysis.
 Table of Contents
 	•	Installation
@@ -32,7 +32,7 @@ Table of Contents
 	•	Contributing
 	•	License
 	•	
-#Installation
+# Installation
 i) Installation process for Chrome Extension
 - clone the repository containing the code files for the Chrome extension 
 - enable the developers tool in Chrome manage extension
@@ -69,7 +69,7 @@ Download Result
 
 
 
-#Usage
+# Usage
 1) Using Chrome extension
 - After enabling the Chrome Extension , surf on Youtube videos to analyse automatically the active tab video comments
 - just on one click analyze the sentiments of the comments 
@@ -82,12 +82,7 @@ Download Result
 - explore sentiment analysis , visualization and download results using the provided options
 
 
-##Screenshots
-
-      
-
-
-##Contact
+## Contact
 
 - Team Leader : Name : Tanmay Shingavi 
                   email : tanmaysplan@gmail.com
@@ -103,3 +98,8 @@ Download Result
 - Member 3 : Name : Amey Joshi 
              email : ameyj3068@gmail.com
              conatct : 8208807387
+
+## Screenshots
+
+      
+
