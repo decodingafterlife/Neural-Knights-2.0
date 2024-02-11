@@ -1,4 +1,4 @@
-### Sentiment Hub
+# Sentiment Hub
 
 Sentiment Hub is a sentiment analysis tool designed to analyze emotions expressed in text comments on YouTube and Instagram. With the ability to detect six different emotions, it provides valuable insights into audience reactions and sentiment trends across these platforms.
 
@@ -100,6 +100,8 @@ Download Result
              conatct : 8208807387
 
 ## Screenshots
-
-      
-
+![screenshot1](Screenshot 2024-02-11 at 9.11.25 AM.png)
+![screenshot2](Screenshot 2024-02-11 at 9.16.05 AM.png)
+![screenshot3](Screenshot 2024-02-11 at 9.16.15 AM.png)
+![screenshot4](Screenshot 2024-02-11 at 9.16.31 AM.png)
+![screenshot5](Screenshot 2024-02-11 at 9.16.43 AM.png)
