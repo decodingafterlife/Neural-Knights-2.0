@@ -1,6 +1,6 @@
 import sys
 import pandas as pd
-sys.path.append(r'C:\Users\Swarup Pokharkar\Documents\Dev Clash\Neural-Knights-2.0\Sentement')
+sys.path.append('/home/amey/Desktop/DevKraft/Sentement/')
 from youtube import Youtube as yt
 from urllib.parse import urlparse
 import analysis
@@ -50,7 +50,7 @@ def video(video_link, model2):
         video_id = video_analysis.get_video_id(video_link)
 
 
-        data = video_analysis.get_data(video_id, 10)
+        data = video_analysis.get_data(video_id, 30)
 
         comments = video_analysis.get_comments(data)
             
@@ -67,9 +67,6 @@ def post(post_link, model2):
     comments = data["Comment"].tolist()
     predictions = model2(comments)
     display_results(predictions)
-        
-
-
                 
 
 # Set up the inference pipeline using the first model
