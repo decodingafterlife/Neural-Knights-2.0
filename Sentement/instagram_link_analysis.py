@@ -6,14 +6,14 @@ import analysis
 
 def post(post_link):
 
-    st.write("Instagram Analysis")
+    st.title("Instagram Analysis")
 
     # Getting max number of comments from the user
     max_length = st.number_input("Enter maximum comments duration", value=30, min_value = 1, max_value = 100)
 
     button = st.button("Analyze")
 
-    if button:
+    if True:
 
         data = instagram.extract_instagram_comments(post_link, max_length)
 
@@ -52,30 +52,11 @@ def post(post_link):
 
             st.write("Sentiment Analysis Results:")
             st.dataframe(merged_df1, hide_index=True)
+            st.dataframe(merged_df2, hide_index=True)
 
             # Plotting the wordcloud for the particular category
             analysis.positive_wordcloud(merged_df1)
             analysis.negative_wordcloud(merged_df1)
             analysis.neutral_wordcloud(merged_df1)
 
-            # Download the data
-            @st.cache_data
-            def convert_df(df):
-                return df.to_csv().encode('utf-8')
-
-            csv1 = convert_df(merged_df1)
-            csv2 = convert_df(merged_df2)
-
-            download_button_1 = st.download_button(
-                label="Download Results for first Model",
-                data=csv1,
-                file_name='sentiment_analysis_results1.csv',
-                mime='text/csv'
-            )
-
-            download_button_2 = st.download_button(
-                label="Download Results for second Model",
-                data=csv2,
-                file_name='sentiment_analysis_results.csv',
-                mime='text/csv',
-            )    
+            
