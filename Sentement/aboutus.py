@@ -5,7 +5,7 @@ def about_us():
 
     st.header("About Us")
     
-    st.markdown("""<div style='border: 1px solid #e6e6e6; padding: 10px; border-radius: 5px;'><h2>Welcome to Sentiment-Tube</h2>
+    st.markdown("""<div style='border: 1px solid #e6e6e6; padding: 10px; border-radius: 5px;'><h2>Welcome to Sentiment-Hub</h2>
 
 Ever watched a YouTube video and wondered what others really think about it? With YouTube removing the dislike button, it's become harder to gauge public sentiment. But worry not! Our website is here to help.
 
