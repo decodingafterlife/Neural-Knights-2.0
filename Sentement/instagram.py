@@ -8,7 +8,7 @@ import streamlit as st
 def extract_instagram_comments(post_url, limit=5):
     # Create an instance of Instaloader
     loader = instaloader.Instaloader()
-    loader.login(user="demotestdevclash", passwd="testdemo")
+    loader.login(user="user-name", passwd="pass-key")
 
     try:
         # Load the post by its URL
