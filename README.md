@@ -1,67 +1,105 @@
-## Sentement-Tube
+###Sentiment Hub
 
-<h3>Understanding Audience Feedback Effectively</h3>
+Sentiment Hub is a sentiment analysis tool designed to analyze emotions expressed in text comments on YouTube and Instagram. With the ability to detect six different emotions, it provides valuable insights into audience reactions and sentiment trends across these platforms.
 
-Our goal is to empower content consumers and creators through sentiment analysis, providing valuable insights into the emotional tone of their content. Through sentiment analysis, we aim to bridge the gap between creators and consumers, fostering meaningful connections and elevating the overall content experience.
+This project aims to provide an easy-to-use interface for sentiment analysis, allowing users to gain deeper understanding and actionable insights from social media interactions.
 
-## Key Features
+#Key features:
+- Analyze sentiment across YouTube and Instagram comments.
+- Detect six different emotions: happiness, sadness, anger, fear, surprise, and disgust.
+- Easy-to-use Chrome  Extension that automatically detects that you are on a social media site and analyses Post and comments 
+- User-friendly interface for input and visualization of results.
+- Data visualization of analysing emotions in Pie-charts , wordClouds , etc..
+- Target based analysis on specific inputs
 
-- _Exclusive Focus_: Tailored for YouTube comments, our tool eliminates the need for image and video filtering.
-- _Relevance Assurance_: Extracting comments from topic-related videos ensures precise sentiment analysis.
-- _Topic Flexibility_: Accommodates specific requests while offering real-time analysis on any given topic.
-- _Real-time Responsiveness_: Equipped for immediate sentiment analysis, enhancing adaptability.
-- _Labelled Data Creation_: Effortless labeled data generation for enhanced model training and accuracy.
-- _Pertinent Data Extraction_: Ensures our model receives only relevant information by extracting comments from related videos.
-- _Data Visualization_: Data can be visualized in various graphs, pie charts, and diagrams according to specific needs.
+Ready to get started? Follow the installation steps below to set up Sentiment Hub and start analysing sentiment today!
 
-## Technologies Used
-
-- TensorFlow
-- Streamlit
-- Pandas
-- Torch
+#Technologies used 
+- Python
 - Matplotlib
-- Google API Python Client
-- Transformers
-- Wordcloud
-- instaloader
-- emoji
+- Hugging Face
+- Javascript
+- Node JS
+- Docker 
+- Streamlit
 
-## Installation
 
-1. Clone the repository:
+#Description
+The Sentiment Hub project is an emotion detection tool mainly focusing on Social Media platforms ( Youtube and Instagram ) using Sentiment Analysis.
+Table of Contents
+	•	Installation
+	•	Usage
+	•	Contributing
+	•	License
+	•	
+#Installation
+i) Installation process for Chrome Extension
+- clone the repository containing the code files for the Chrome extension 
+- enable the developers tool in Chrome manage extension
+- load the unpack of the cloned repository and you are good to go ...
 
-   ```bash
-   $ git clone https://github.com/decodingafterlife/Sentement-Tube.git
-   $ cd your-repo
-   ```
-
-2. Install dependencies:
-
+ii) Installation process for streamlit website 
+- create a python virtual environment 
+- clone the repository in the created virtual environment 
+- pip install requirements.txt
    ```bash
    $ pip install -r requirements.txt
    ```
-
+   
    ```bash
    $ npm i
    ```
+- open terminal and run the command
+```bash
+   $ streamlit run ./model/sentiment_analysis/app.py
+   ```
+- and you are good to analyze 
 
-## Usage
+Visualizations
 
-1. Add your youtube api key in the target_based_analysis_page.py and video_based_analysis_page.py
-1. Run the application:
+- Pie Charts: Visual representation of sentiment distribution
+- Word Clouds : Graphical representation of frequently occuring words in positive , negative and neural comments 
+- Tabular : direct table format for the result of 6 emotion sentiment analysis
 
+
+Download Result 
+
+- Click the " Download Results " button to auto download the analysis result in CSV format 
+( the above is for the Sentiment analysis using website ) 
+
+
+
+#Usage
+1) Using Chrome extension
+- After enabling the Chrome Extension , surf on Youtube videos to analyse automatically the active tab video comments
+- just on one click analyze the sentiments of the comments 
+
+2) Using the Streamlit website 
+- run the application :
    ```bash
    $ streamlit run ./model/sentiment_analysis/app.py
    ```
+- explore sentiment analysis , visualization and download results using the provided options
 
-1. Open your browser and navigate to page.
 
-1. Explore sentiment analysis, visualizations, and download results using the provided options.
+##Screenshots
 
-## Visualizations
+      
 
-- _Pie Charts_: Visual representation of sentiment distribution.
-- _Word Clouds_: Graphical representation of frequently occurring words in positive, negative, and neutral comments.
 
-## Website Insights
+##Contact
+
+- Team Leader : Name : Tanmay Shingavi 
+                  email : tanmaysplan@gmail.com
+                  contact :7448267050
+
+- Member 1 : Name : Yash Bhoomkar 
+             email : bhoomkar04@gmail.com
+             contact : 9405390030
+
+- Member 2 : Name : Swaroop Pokharkar 
+             email : swarooppokharkar8@gmail.com
+
+- Member 3 : Name : Amey Joshi 
+             email : ameyj3068@gmail.com
+             conatct : 8208807387
