@@ -30,7 +30,7 @@ def video(video_link):
         max_results = st.number_input("Enter maximum number of comments", value=100, min_value = 1, max_value = 200)
 
 
-        if st.button("Analyze"):
+        if True:
 
             data = video_analysis.get_data(video_id, max_results)
 
@@ -75,31 +75,11 @@ def video(video_link):
 
                 st.write("Sentiment Analysis Results:")
                 st.dataframe(merged_df1, hide_index=True)
+                st.dataframe(merged_df2, hide_index=True)
 
                 # Plotting the wordcloud for the particular category
                 analysis.positive_wordcloud(merged_df1)
                 analysis.negative_wordcloud(merged_df1)
                 analysis.neutral_wordcloud(merged_df1)
 
-                # Download the data
-                @st.cache_data
-                def convert_df(df):
-                    return df.to_csv().encode('utf-8')
-
-                csv1 = convert_df(merged_df1)
-                csv2 = convert_df(merged_df2)
-
-                download_button_1 = st.download_button(
-                    label="Download Results for first Model",
-                    data=csv1,
-                    file_name='sentiment_analysis_results1.csv',
-                    mime='text/csv',
-                    on_click=download_results1  # Assigning the function to on_click parameter
-                )
-
-                download_button_2 = st.download_button(
-                    label="Download Results for second Model",
-                    data=csv2,
-                    file_name='sentiment_analysis_results.csv',
-                    mime='text/csv',
-                )
+                

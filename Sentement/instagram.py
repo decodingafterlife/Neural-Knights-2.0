@@ -8,7 +8,7 @@ import streamlit as st
 def extract_instagram_comments(post_url, limit=5):
     # Create an instance of Instaloader
     loader = instaloader.Instaloader()
-    loader.login(user="id_diot", passwd="Tanmay@2004*")
+    loader.login(user="demotestdevclash", passwd="testdemo")
 
     try:
         # Load the post by its URL
@@ -23,8 +23,8 @@ def extract_instagram_comments(post_url, limit=5):
         
         # Iterate over comments and store them in lists
         for comment in post.get_comments():
-            if len(comment.text):
-                continue
+            # if len(comment.text):
+            #     continue
             comments_list.append(comment.text)
             usernames_list.append(comment.owner.username)  # Accessing the username through owner
             
