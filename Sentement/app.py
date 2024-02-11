@@ -8,31 +8,19 @@ from PIL import Image
 from link import link_analysis
 
 def home():
-    # st.write("Understanding Audience Feedback Effectively")
 
-    st.markdown("<h3 style='text-align: center;'>Understanding Audience Feedback Effectively</h3>", unsafe_allow_html=True)
+    st.write("Understanding Audience Feedback Effectively")
     st.write(" ")
     st.write(" ")
     st.write(" ")
     st.write(" ")
-    st.markdown("""<div style='border: 1px solid #e6e6e6; padding: 10px; border-radius: 5px;'><h2>Welcome to Sentiment-Tube</h2>
+    st.markdown("""<div style='border: 1px solid #e6e6e6; padding: 10px; border-radius: 5px;'><h2>Welcome to Sentiment-Hub</h2>
 Here we delve into the heartbeat of YouTube conversations. Our cutting-edge sentiment analysis tools decode the emotions hidden in every comment, offering a unique perspective on audience engagement and content reception. Analyzing sentiments in comments provides valuable insights into audience reactions, preferences, and opinions, which can be beneficial for content creators, marketers, and platform administrators
 """, unsafe_allow_html=True)
 
-    pass
 
 def main():
-    im = Image.open('logo.png')#Title and App Icon
-    st.set_page_config(page_title="Sentiment-Tube", page_icon = im)
-    
-    hide_default_format = """
-       <style>
-       #MainMenu {visibility: hidden; }
-       footer {visibility: hidden;}
-       </style>
-       """
-    st.markdown(hide_default_format, unsafe_allow_html=True)#remove the Menu Button and Streamlit Icon
-    st.image('logo.png', width=700)
+    st.title("Sentiment-Hub")
 
     menu = ["Home", "Link Analysis", "Target Analysis", "About"]
     choice = st.sidebar.selectbox("Select Page", menu)
