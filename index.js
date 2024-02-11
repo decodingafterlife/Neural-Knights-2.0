@@ -32,7 +32,7 @@ app.get("/api", (req, res) => {
     };
     const jsonData = JSON.stringify(data1, null, 2);
 
-    fs.writeFileSync("./geturl/output.json", jsonData, (error) => {
+    fs.writeFileSync("./output.json", jsonData, (error) => {
       if (error) {
         console.log(error);
       } else {

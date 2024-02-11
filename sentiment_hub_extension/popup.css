@@ -1,0 +1,100 @@
+/* popup.css */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 350px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.url {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.socialMediaText {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+#jsonTable {
+    margin-top: 20px;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#jsonTable th,
+#jsonTable td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+#jsonTable th {
+    background-color: #f2f2f2;
+    color: #333;
+    font-weight: bold;
+}
+
+.error {
+    color: #d9534f;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* Add hover effect */
+.container:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Button styles */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+/* Additional color variations */
+.info {
+    color: #17a2b8; /* Info color */
+}
+
+.success {
+    color: #28a745; /* Success color */
+}
+
+.warning {
+    color: #ffc107; /* Warning color */
+}
+
+.danger {
+    color: #dc3545; /* Danger color */
+}
+

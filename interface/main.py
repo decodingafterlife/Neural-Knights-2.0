@@ -1,6 +1,6 @@
 import sys
 import pandas as pd
-sys.path.append('/home/amey/Desktop/DevKraft/Sentement/')
+sys.path.append('/home/amey/Documents/GithubClone/Neural-Knights-2.0/model/sentiment_analysis')
 from youtube import Youtube as yt
 from urllib.parse import urlparse
 import analysis
