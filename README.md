@@ -85,7 +85,7 @@ Download Result
 ## Contact
 
 - Team Leader : Name : Tanmay Shingavi 
-                  email : tanmaysplan@gmail.com
+                  email : tanmayshingavi1@gmail.com
                   contact :7448267050
 
 - Member 1 : Name : Yash Bhoomkar 
